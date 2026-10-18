@@ -319,6 +319,65 @@
   /* ---- 8. Agent 3: draw lines ---- */
   C.a3 = { enter(sc) { const b = $('.bars', sc); b.classList.remove('on'); if (reduced()) b.classList.add('on'); else later(() => b.classList.add('on'), 250); } };
 
+  /* ---- 8b. Agent 07: audience — real comments sorted into intent buckets (counts from Sada's audience view) ---- */
+  const AUD_B = [
+    ['event', 'تفاعل مع الحدث نفسه', 1991, '#B9A6FF'], ['other', 'أخرى', 284, 'rgba(248,248,248,.55)'],
+    ['crit', 'انتقاد وملاحظات', 109, 'var(--red)'], ['praise', 'إشادة وثناء', 78, 'var(--green)'],
+    ['q', 'أسئلة واستفسارات', 44, 'var(--amber)'], ['req', 'طلبات واقتراحات', 34, 'var(--cyan)']
+  ];
+  const AUD_C = [
+    { t: '«حفظ الله المملكة حكومةً وأرضًا وشعبًا»', s: 'قناة الإخبارية · يوتيوب', m: 'محايد', b: 'event' },
+    { t: '«صوتها قوي فعلًا»', s: 'قناة SBC · إنستغرام', m: 'إيجابي', b: 'praise' },
+    { t: '«عندما ينعدم المحتوى وتتصدر هؤلاء…»', s: 'قناة SBC · يوتيوب', m: 'سلبي', b: 'crit' },
+    { t: '«في رمضان الجاي أي جزء من بابا فرحان تعرضون؟»', s: 'قناة ذكريات · يوتيوب', m: 'محايد', b: 'q' },
+    { t: '«ياليت لو يطرحون أسئلة عن البنوك الربوية…»', s: 'قناة السعودية · إنستغرام', m: 'محايد', b: 'req' }
+  ];
+  C.aud = {
+    init(sc) {
+      const total = AUD_B.reduce((a, b) => a + b[2], 0);
+      $('#audBuckets', sc).insertAdjacentHTML('beforeend', AUD_B.map(([k, l, n, c]) => {
+        const p = Math.round(n / total * 100);
+        return `<div class="ab" data-b="${k}" style="--bc:${c}"><span class="t">${l}</span><span class="bt"><i style="--w:${Math.max(1.5, n / total * 100)}%"></i></span><span class="v"><b data-to="${n}">0</b> · ${p}%</span></div>`;
+      }).join(''));
+    },
+    show(sc, i) {
+      const c = AUD_C[i % AUD_C.length], box = $('#audCmt', sc), b = AUD_B.find(x => x[0] === c.b);
+      box.className = 'aud-cmt'; void box.offsetWidth;
+      $('p', box).textContent = c.t; $('small', box).textContent = c.s;
+      $('.aud-cls', box).innerHTML = `<span class="tag">المشاعر: ${c.m}</span><span class="tag" style="--bc:${b[3]}">${b[1]}</span>`;
+      box.classList.add('in');
+      if (reduced()) { box.classList.add('cls'); return; }
+      later(() => box.classList.add('cls'), 700);
+      later(() => {
+        box.classList.add('fly');
+        const row = $(`.ab[data-b="${c.b}"]`, sc); row.classList.remove('ping'); void row.offsetWidth; row.classList.add('ping');
+      }, 1900);
+      later(() => this.show(sc, i + 1), 2500);
+    },
+    enter(sc) {
+      const nums = $$('.ab b', sc), bars = $$('.ab i', sc);
+      bars.forEach(b => b.classList.remove('on'));
+      const fmt = v => Math.round(v).toLocaleString('en-US');
+      if (reduced()) { nums.forEach(n => (n.textContent = fmt(+n.dataset.to))); bars.forEach(b => b.classList.add('on')); }
+      else {
+        later(() => bars.forEach(b => b.classList.add('on')), 200);
+        this.count(nums, el => +el.dataset.to, 4200);
+      }
+      this.show(sc, 0);
+    },
+    count(els, to, d) {
+      const fmt = v => Math.round(v).toLocaleString('en-US'), t0 = performance.now();
+      const tick = now => { const k = Math.max(0, Math.min(1, (now - t0) / d)), e = 1 - Math.pow(1 - k, 3); els.forEach(el => (el.textContent = fmt(to(el) * e))); if (k < 1) rafs.push(requestAnimationFrame(tick)); };
+      els.forEach(el => (el.textContent = '0')); rafs.push(requestAnimationFrame(tick));
+    },
+    step(sc, s) {
+      if (s !== 1) return;
+      const els = $$('[data-count]', sc);
+      if (reduced()) els.forEach(el => (el.textContent = (+el.dataset.count).toLocaleString('en-US')));
+      else this.count(els, el => +el.dataset.count, 1600);
+    }
+  };
+
   /* ---- 9. Agent 4: broadcast signal + scanning spike detector ---- */
   C.a4 = {
     init() {
