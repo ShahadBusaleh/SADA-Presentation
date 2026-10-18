@@ -1,0 +1,539 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>صدى | SADA</title>
+<link rel="preload" href="assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.lang="ar";document.documentElement.dir="rtl";</script>
+<div id="stage">
+
+  <!-- Template chrome: AgentX top, partners bottom (positions from AGXD Screen Template, dark variant) -->
+  <img class="chrome chrome-agentx" src="assets/logos/agentx-white.png" alt="AgentX">
+  <div class="chrome chrome-partner chrome-mcit"><span>الشريك الاستراتيجي</span><img src="assets/logos/mcit-white.png" alt="وزارة الاتصالات وتقنية المعلومات"></div>
+  <div class="chrome chrome-partner chrome-aramco"><span>الراعي البلاتيني</span><img src="assets/logos/aramco-white.png" alt="أرامكو"></div>
+  <div id="progress"></div>
+
+  <!-- 1 · HOOK -->
+  <section class="scene s-hook" data-id="hook" data-target="15" data-steps="1">
+    <div class="mark"><img class="sada-logo" src="assets/logos/sada.png" alt="صدى"><span>صدى | <span class="en">SADA</span> · فريق أوج</span></div>
+    <h1 class="q1" id="hookQ1">تخيّل أنك مسؤول عن المحتوى الإعلامي <span class="hl">لعشرات الحسابات</span>… كيف تعرف ما الذي ينجح فعلًا؟</h1>
+    <p class="q2" data-step="1">وهل يمكنك متابعة كل تفاعل وتحليله في الوقت المناسب؟</p>
+    <aside class="notes"><b>15 ث</b> — اقرئي السؤال الأول ببطء، توقّفي ثانيتين. اضغطي ← للسؤال الثاني. ثم اضغطي ← لبدء المشهد.</aside>
+  </section>
+
+  <!-- 2 · FEED (TikTok / X simulation) -->
+  <section class="scene s-feed" data-id="feed" data-target="25" data-steps="1">
+    <div class="feed-wrap">
+      <div class="feed-label">محاكاة توضيحية — المقاطع والتعليقات والأرقام ليست بيانات حقيقية</div>
+      <div class="phone"><div class="screen"><div class="reel-track" id="reelTrack"></div><div class="swipe-hint" id="swipeHint"></div></div></div>
+      <div id="xLayer"></div>
+      <div class="counter-pill" id="cp1" style="top:150px;right:150px">+12 منشورًا<small>في آخر ساعة · توضيحي</small></div>
+      <div class="counter-pill" id="cp2" style="top:820px;left:160px">٨ منصات وحسابات<small>لوحات منفصلة · توضيحي</small></div>
+    </div>
+    <div class="freeze-q">
+      <h2>كل هذه البيانات… <em>كيف نحوّلها إلى قرار؟</em></h2>
+      <p>تعدد المنصات · تشتت المؤشرات · صعوبة فهم الجمهور</p>
+    </div>
+    <div class="scene-ctl"><button data-act="replay">↻ إعادة المشهد</button><button data-act="skip">تخطٍّ ⏭</button></div>
+    <aside class="notes"><b>25 ث</b> — يبدأ المقطع تلقائيًا (~10 ث). اتركيه يتكلم. عند التوقف: «كل هذه البيانات… كيف نحوّلها إلى قرار؟». ← يُظهر السؤال فورًا إن أردتِ التخطي.</aside>
+  </section>
+
+  <!-- 3 · SBA ECOSYSTEM TREE -->
+  <section class="scene s-tree" data-id="tree" data-target="30" data-steps="5">
+    <div class="tree-head"><div class="kicker">حالة الاستخدام الأساسية</div><h2 style="font-size:40px;margin-top:8px">منظومة هيئة الإذاعة والتلفزيون</h2></div>
+    <div class="tree-level-tag">
+      <span class="tag" data-lv="1">القنوات</span><span class="tag" data-lv="2">الحسابات الرقمية</span><span class="tag" data-lv="3">المحتوى</span><span class="tag" data-lv="4">التفاعلات</span>
+    </div>
+    <svg id="tree" viewBox="0 0 1920 1080"></svg>
+    <div class="tree-legend" data-step="2">
+      <span><i style="border-color:var(--green);background:rgba(141,232,138,.25)"></i>يوتيوب: جمع آلي فعلي في صدى</span>
+      <span><i style="border-color:var(--cyan)"></i>X: جامع مبني · بيانات جزئية</span>
+      <span><i style="border-color:var(--amber);border-style:dashed"></i>إنستغرام: بيانات جزئية · الربط الرسمي قيد الإعداد</span>
+      <span style="color:var(--amber)">الشجرة توضّح نطاق المنظومة، ولا تعني أن صدى مرتبط بكل حساب فيها</span>
+    </div>
+    <div class="tree-msg" data-step="5">
+      <h2><span>قنوات متعددة. منصات متعددة. تفاعلات لا تتوقف…</span><span class="q">لكن أين الرؤية الموحّدة؟</span></h2>
+      <div class="cta">هنا يأتي دور صدى</div>
+    </div>
+    <aside class="notes"><b>30 ث</b> — ← القنوات (أسماؤها من سجل القنوات المتحقق منه في الكود) · ← الحسابات · ← المحتوى · ← التفاعلات · ← «لكن أين الرؤية الموحّدة؟ … هنا يأتي دور صدى».</aside>
+  </section>
+
+  <!-- 4 · SADA REVEAL -->
+  <section class="scene s-reveal" data-id="reveal" data-target="30" data-steps="3">
+    <canvas id="revealCanvas" width="1920" height="1080"></canvas>
+    <div class="reveal-core">
+      <img class="glow" src="assets/logos/sada.png" alt="صدى">
+      <div class="en">SADA</div>
+      <h2>من تشتت البيانات إلى <b>وضوح القرار</b></h2>
+    </div>
+    <div class="pipeline" data-step="1">
+      <div class="pipe-flow"></div>
+      <div class="pipe-node card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="2"/><rect x="14" y="4" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></div>منصات متعددة<small>يوتيوب · X · إنستغرام</small></div>
+      <div class="pipe-node card"><div class="ic"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>بيانات موحّدة<small>جودة وتوحيد</small></div>
+      <div class="pipe-node card"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/></svg></div>تحليل ذكي<small>وكلاء متخصصون</small></div>
+      <div class="pipe-node card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></div>توصيات عملية<small>مع الدليل</small></div>
+      <div class="pipe-node card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></div>قرارات أفضل<small>لفريق المحتوى</small></div>
+    </div>
+    <div class="contrast" data-step="2">
+      <div class="card"><b>لوحة الإحصائيات</b>تعرض ماذا حدث</div>
+      <div class="vs">مقابل</div>
+      <div class="card sada"><b>صدى</b>يفسّر الأنماط ويقترح الخطوة التالية</div>
+    </div>
+    <div class="novel" data-step="3"><b>الجديد في صدى</b><span>8 وكلاء متخصصون، لا نموذج واحد</span><span>كل توصية مربوطة بمنشور حقيقي</span><span>لا يخترع سببًا ولا رقمًا</span><span>يفهم اللهجة السعودية</span><span>يقيس دقته بنفسه</span></div>
+    <aside class="notes"><b>30 ث</b> — البيانات تتجمّع ويظهر صدى. «صدى منصة وكلاء ذكية تجمع بيانات الجمهور من منصات الهيئة في مكان واحد…» ← المسار · ← الفرق عن لوحات الإحصائيات · ← «والجديد في صدى»: اقرئي النقاط الخمس بسرعة.</aside>
+  </section>
+
+  <!-- 5 · DATA LAYER -->
+  <section class="scene s-data" data-id="data" data-target="30" data-steps="1">
+    <div class="kicker">طبقة البيانات</div>
+    <h2 class="title">بيانات حقيقية، بقواعد جودة صارمة</h2>
+    <div class="grid">
+      <div class="panel card">
+        <h3>قاعدة المعرفة الدلالية <small class="en">Chroma Cloud</small></h3>
+        <div class="stats">
+          <div class="stat"><div class="n g" data-count="35000" data-plus="1">0</div><div class="l">سجل حقيقي</div></div>
+          <div class="stat"><div class="n" data-count="13">0</div><div class="l">مجموعة بيانات</div></div>
+          <div class="stat"><div class="n c" data-count="4">0</div><div class="l">منصات</div></div>
+        </div>
+        <div class="srcs"><span class="tag en">YouTube</span><span class="tag en">X</span><span class="tag en">Instagram</span><span class="tag en">Apple Podcasts</span><span class="tag">نصوص حلقات البودكاست</span><span class="tag">إحصائيات رسمية مفتوحة</span></div>
+        <p style="margin-top:22px;font-size:20px;color:var(--muted)">بحث بالمعنى بالعربية والإنجليزية · نموذج تضمين متعدد اللغات</p>
+      </div>
+      <div class="panel card">
+        <h3>قاعدة التشغيل في التطبيق <small>يوتيوب كل 30 دقيقة</small></h3>
+        <div class="stats">
+          <div class="stat"><div class="n c" data-count="14">0</div><div class="l">حسابًا رسميًا</div></div>
+          <div class="stat"><div class="n" data-count="15060">0</div><div class="l">منشورًا</div></div>
+        </div>
+        <p style="margin-top:28px;font-size:20px;color:var(--muted)">7,777 فيديو يوتيوب + 7,283 منشور X · أبريل–أكتوبر 2026<br>عبر الواجهات البرمجية الرسمية · سلسلة زمنية لأداء كل منشور</p>
+      </div>
+    </div>
+    <div class="quality" data-step="1">
+      <span class="tag ok"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>لا أرقام مختلقة: المفقود يبقى فارغًا لا صفرًا</span>
+      <span class="tag ok"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>فحص التكرار ومعرّف ثابت لكل سجل</span>
+      <span class="tag ok"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>خصوصية: هوية المعلّق رمز مشفّر</span>
+      <span class="tag ok"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>فصل الحساب الرسمي عن إعادة النشر</span>
+      <span class="tag warn"><svg viewBox="0 0 24 24"><path d="M12 8v5M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>البيانات التجريبية موسومة بوضوح</span>
+    </div>
+    <div class="footnote">35,788 سجلًا إجمالًا، منها 426 سجلًا تجريبيًا موسومًا. السجلات تشمل لقطات أداء متكررة ونصوصًا مقسّمة — وليست منشورات فريدة أو أشخاصًا. المصدر: دليل طبقة البيانات (17 أكتوبر 2026)، ومطابق لملف البيانات الأولية في مستودع صدى.</div>
+    <aside class="notes"><b>30 ث</b> — «أكثر من 35 ألف سجل حقيقي… قاعدة معرفة تبحث بالمعنى، والتطبيق يتابع 15 ألف منشور من 14 حسابًا رسميًا». ← قواعد الجودة.</aside>
+  </section>
+
+  <!-- 10 · INTEGRATION -->
+  <section class="scene" data-id="integ" data-target="20" data-steps="2">
+    <div class="kicker">تكامل الوكلاء</div>
+    <h2 class="title" style="font-size:54px">منظومة واحدة، لا أدوات منفصلة</h2>
+    <svg id="integ" viewBox="0 0 1760 640"></svg>
+    <div class="integ-legend">
+      <span><i style="border-color:rgba(248,248,248,.45)"></i>قراءة من قاعدة بيانات مشتركة</span>
+      <span><i style="border-color:var(--green)"></i>استدعاء فعلي في الكود (مخزن الأنماط)</span>
+      <span><i style="border-color:var(--amber);border-top-style:dashed"></i>تكامل عبر الواجهة</span>
+    </div>
+    <aside class="notes"><b>20 ث</b> — «وكيل الجمع يغذّي قاعدة واحدة… وكيل السلوك يبني مخزن الأنماط، ووكيلا التحسين والتشخيص يقرآن منه مباشرة» ← «والتنبيه في الواجهة يقود للتشخيص بضغطة».</aside>
+  </section>
+
+  <!-- 5b · THE 8 AGENTS (from AGENT_SPEC.md + backend/agents/) -->
+  <section class="scene s-team8" data-id="team8" data-target="25" data-steps="4">
+    <div class="kicker">وكلاء صدى</div>
+    <h2 class="title">ثمانية وكلاء… <b>دورة حياة المنشور كاملة</b></h2>
+    <div class="t8-grid">
+      <div class="t8-col" style="--acc:var(--green)">
+        <div class="t8-phase"><small>المرحلة 1</small>نرصد ونفهم</div>
+        <div class="t8-card card"><div class="t8-top"><span class="n"><b>01</b></span></div>
+          <h4>وكيل جمع البيانات<span class="en">Data Collector Agent</span></h4><div class="q">«ما الجديد على حساباتنا؟»</div><div class="how">يوتيوب كل 30 دقيقة · X · إنستغرام — ضمن ميزانية الحصة</div></div>
+        <div class="t8-card card"><div class="t8-top"><span class="n"><b>02</b></span><span class="t8-deep">بالتفصيل ←</span></div>
+          <h4>وكيل تحليل السلوك<span class="en">Behavior Analysis Agent</span></h4><div class="q">«ماذا يريد الجمهور فعلًا؟»</div><div class="how">أنماط بدلالة إحصائية فقط — ويغذّي مخزن الأنماط المشترك</div></div>
+      </div>
+      <div class="t8-col" style="--acc:var(--cyan)" data-step="1">
+        <div class="t8-phase"><small>المرحلة 2</small>قبل النشر</div>
+        <div class="t8-card card"><div class="t8-top"><span class="n"><b>03</b></span><span class="t8-deep">بالتفصيل ←</span></div>
+          <h4>وكيل تحسين المحتوى والنشر<span class="en">Content &amp; Publishing Optimizer</span></h4><div class="q">«ماذا ننشر؟ وأين؟ ومتى؟»</div><div class="how">صيغ بديلة مرتّبة بالأنماط + الحساب والموعد الأنسب</div></div>
+        <div class="t8-card card"><div class="t8-top"><span class="n"><b>04</b></span></div>
+          <h4>وكيل التنبؤ والرائج<span class="en">Trend &amp; Viral Prediction Agent</span></h4><div class="q">«ما الذي سينتشر؟»</div><div class="how">سرعة المشاهدات وتوقّع اليوم السابع — مع قياس دقته</div></div>
+      </div>
+      <div class="t8-col" style="--acc:var(--amber)" data-step="2">
+        <div class="t8-phase"><small>المرحلة 3</small>بعد النشر</div>
+        <div class="t8-card card"><div class="t8-top"><span class="n"><b>05</b></span></div>
+          <h4>وكيل رصد الارتفاع والانخفاض<span class="en">Anomaly Detection Agent</span></h4><div class="q">«ما الذي خرج عن المعتاد؟»</div><div class="how">مقارنة بالمنشورات المشابهة في نفس العمر: ثلاثة أضعاف المعتاد أو أقل من ثلثه</div></div>
+        <div class="t8-card card"><div class="t8-top"><span class="n"><b>06</b></span><span class="t8-deep">بالتفصيل ←</span></div>
+          <h4>وكيل التشخيص والتوصيات<span class="en">Diagnostic &amp; Recommendation Agent</span></h4><div class="q">«لماذا انخفض التفاعل؟»</div><div class="how">أسباب يتحكم بها الفريق: التوقيت، الصيغة، تزاحم النشر — مع الدليل</div></div>
+      </div>
+      <div class="t8-col" style="--acc:#B9A6FF" data-step="3">
+        <div class="t8-phase"><small>المرحلة 4</small>الجمهور واللحظة</div>
+        <div class="t8-card card"><div class="t8-top"><span class="n"><b>07</b></span></div>
+          <h4>وكيل تحليل الجمهور<span class="en">Audience Analysis Agent</span></h4><div class="q">«ماذا يقول الجمهور عنّا؟»</div><div class="how">مشاعر التعليقات ونواياها — دقة المشاعر 94% مقابل تصنيف بشري، بلا بيانات شخصية</div></div>
+        <div class="t8-card card"><div class="t8-top"><span class="n"><b>08</b></span><span class="t8-sim">محاكاة</span><span class="t8-deep">بالتفصيل ←</span></div>
+          <h4>وكيل رصد لحظات البث<span class="en">Live Clip Detection Agent</span></h4><div class="q">«ما الذي يستحق انتباهنا الآن؟»</div><div class="how">قفزات فوق خط أساس متحرك · على إشارة بث تجريبية</div></div>
+      </div>
+    </div>
+    <div class="t8-foot" data-step="4"><span class="loop">↻</span>كلهم يقرؤون من قاعدة بيانات واحدة ومخزن أنماط مشترك — وما يتعلّمه وكيل يستفيد منه الآخرون. <b>والآن: أربعة منهم بالتفصيل</b></div>
+    <aside class="notes"><b>25 ث</b> — «صدى ليس وكيلًا واحدًا، بل ثمانية، كل واحد يجيب عن سؤال في دورة حياة المنشور». المرحلة 1 ظاهرة: الجمع والسلوك · ← قبل النشر: التحسين والتنبؤ · ← بعد النشر: التنبيهات والتشخيص · ← الجمهور واللحظة: الجمهور والبث (محاكاة) · ← «وكلهم يتشاركون نفس البيانات… لنرَ أربعة منهم بالتفصيل».</aside>
+  </section>
+
+  <!-- 6 · AGENT 1: BEHAVIOR -->
+  <section class="scene" data-id="a1" data-target="15" data-steps="1" style="--acc:var(--green)">
+    <div class="agent">
+      <div class="meta">
+        <div class="num"><b>02</b>/ 08 · وكلاء صدى</div>
+        <h3>وكيل تحليل السلوك<span class="en">Behavior Analysis Agent</span></h3>
+        <div class="q">«ماذا يريد الجمهور فعلًا؟»</div>
+        <div class="pills"><span>أنماط ذات دلالة إحصائية</span><span>المحتوى × التوقيت × القناة × المنصة</span><span>مشاعر التعليقات ونواياها</span></div>
+        <div class="value">القيمة: <b>قرار مبني على دليل، لا على انطباع</b></div>
+      </div>
+      <div class="vis">
+        <div class="ill" style="color:var(--green)">مخرجات حقيقية من صدى · 7,562 فيديو يوتيوب من 9 قنوات رسمية</div>
+        <div class="card" style="padding:24px 28px">
+          <div style="font-size:19px;color:var(--muted);margin-bottom:14px">أداء الفيديو مقارنة بالمعتاد لحسابه، حسب اليوم والساعة (بتوقيت الرياض)</div>
+          <div class="heat" id="heat"></div>
+          <div id="heatTop" style="margin-top:14px;font-size:20px;opacity:0;transition:opacity .8s"></div>
+        </div>
+        <div class="card pattern-card" data-step="1">
+          <div class="t">المقاطع القصيرة على يوتيوب تحقق أداءً <span style="color:var(--green)">أعلى بـ 54%</span> من بقية أنواع المحتوى في نفس الحسابات</div>
+          <div class="ev"><span>1.43× vs 0.93×</span><span>n = 1,812 / 5,750</span><span>Welch t = 10.2</span><span>confidence 0.99</span></div>
+        </div>
+      </div>
+    </div>
+    <aside class="notes"><b>15 ث</b> — «هذه مخرجات حقيقية من صدى على بيانات الهيئة: الجمعة ظهرًا تتفوق بوضوح…» ← «ويكتشف أن المقاطع القصيرة أعلى بـ 54%، مع حجم العينة والاختبار الإحصائي. وإذا كانت العينة صغيرة لا يُظهر نمطًا».</aside>
+  </section>
+
+  <!-- 7 · AGENT 2: OPTIMIZER -->
+  <section class="scene" data-id="a2" data-target="15" data-steps="2" style="--acc:var(--cyan)">
+    <div class="agent">
+      <div class="meta">
+        <div class="num"><b>03</b>/ 08 · وكلاء صدى</div>
+        <h3>وكيل تحسين المحتوى والنشر<span class="en">Content Optimizer Agent</span></h3>
+        <div class="q">«ماذا ننشر؟ وأين؟ ومتى؟»</div>
+        <div class="pills"><span>صياغات بديلة بالذكاء الاصطناعي</span><span>ترتيبها مقابل الأنماط المكتشفة</span><span>الحساب والموعد الأنسب</span></div>
+        <div class="value">القيمة: <b>قرار النشر قبل النشر، مع سببه</b></div>
+      </div>
+      <div class="vis">
+        <div class="ill" style="color:var(--green)">مخرج حقيقي من وكيل التحسين · الصيغ الثلاث مُدخلة يدويًا (التوليد الآلي يتطلب مفتاح Gemini)</div>
+        <div class="opt">
+          <div class="draft card"><div class="lbl">المسودة</div><div class="txt">تغطية خاصة لمباراة الليلة مع تحليل الخبراء</div></div>
+          <div class="arrow" data-step="1"><svg viewBox="0 0 24 24"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></div>
+          <div class="variants card" data-step="1">
+            <div class="lbl">الصيغة التي اختارها الوكيل</div>
+            <div class="var win"><span class="rk">1</span>من سيحسم الليلة؟ تحليل الخبراء قبل صافرة البداية</div>
+            <div class="var"><span class="rk">–</span>تغطية خاصة: كل ما تحتاج معرفته عن مباراة الليلة</div>
+            <div class="var"><span class="rk">–</span>مباراة الليلة… بعيون الخبراء</div>
+            <div class="recs" data-step="2"><span class="tag info">المنصة: يوتيوب</span><span class="tag info">الحساب: القنوات الرياضية</span><span class="tag ok">الدليل: المقاطع القصيرة أعلى بـ 54%</span><span class="tag ok">الدليل: صيغة سؤال تفاعلي</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <aside class="notes"><b>15 ث</b> — «قبل النشر، يقيّم الوكيل المسودة، يولّد صيغًا بديلة ويرتبها حسب الأنماط الحقيقية» ← الصيغ · ← «ويوصي بالحساب والصيغة والموعد، وكل توصية تشير إلى النمط الذي اعتمدت عليه».</aside>
+  </section>
+
+  <!-- 8 · AGENT 3: DIAGNOSTIC -->
+  <section class="scene" data-id="a3" data-target="15" data-steps="2" style="--acc:var(--amber)">
+    <div class="agent">
+      <div class="meta">
+        <div class="num"><b>06</b>/ 08 · وكلاء صدى</div>
+        <h3>وكيل التشخيص والتوصيات<span class="en">Diagnostic &amp; Recommendation Agent</span></h3>
+        <div class="q">«لماذا انخفض التفاعل؟»</div>
+        <div class="pills"><span>تنبيه بالارتفاع والانخفاض</span><span>مقارنة بمنشورات مشابهة حقيقية</span><span>توصية مع رابط الدليل</span></div>
+        <div class="value">القيمة: <b>من «ماذا حدث» إلى «لماذا» — بأدلة قابلة للتحقق</b></div>
+      </div>
+      <div class="vis">
+        <div class="ill" style="color:var(--green)">مخرج حقيقي من صدى · منشور على X لحساب الهيئة · نافذة 60 يومًا</div>
+        <div class="diag">
+          <div class="card chart">
+            <span class="tag warn alert">تنبيه انخفاض · <span class="en">0.02×</span> المتوقع لنفس العمر</span>
+            <div class="bars">
+              <div class="brow"><span class="bl">مرات الظهور</span><div class="bt"><i class="bx base" style="--w:100%"></i><i class="bx obs" style="--w:2.5%"></i></div><span class="bv en">180 / 7,133</span></div>
+              <div class="brow"><span class="bl">معدل التفاعل</span><div class="bt"><i class="bx base" style="--w:24.5%"></i><i class="bx obs good" style="--w:100%"></i></div><span class="bv en">1.67% / 0.41%</span></div>
+              <div class="bleg"><span><i class="obs"></i>المنشور</span><span><i class="base"></i>وسيط 24 منشورًا مشابهًا (نفس الحساب والموضوع والنوع ±14 يومًا)</span></div>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="card evi" data-step="1"><h4>العوامل مع أدلتها</h4><ul>
+              <li>الظهور أقل بـ 97% من المشابه<span>0.90</span></li>
+              <li>التفاعل أعلى من المشابه<span>0.72</span></li>
+              <li style="font-size:17px;color:var(--muted)">الدليل: رابط منشور مشابه على x.com/SBAgovSA<span>↗</span></li></ul></div>
+            <div class="card rec" data-step="2"><h4>توصية الوكيل كما هي</h4><p>«لم يظهر فرق واضح في التوقيت أو المدة أو العنوان؛ قد يعود الأداء إلى عوامل غير مرصودة في البيانات.»</p>
+              <small>صدى لا يخترع سببًا لا يدعمه الدليل</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <aside class="notes"><b>15 ث</b> — «هذا تنبيه حقيقي: منشور وصل لـ 180 فقط مقابل 7 آلاف للمشابه» ← «لكن من شاهده تفاعل أكثر — المشكلة في الوصول لا في المحتوى» ← «والأهم: حين لا يجد الدليل سببًا واضحًا، يقولها بصراحة ولا يخترع تفسيرًا».</aside>
+  </section>
+
+  <!-- 9 · AGENT 4: LIVE CLIP -->
+  <section class="scene" data-id="a4" data-target="15" data-steps="1" style="--acc:#B9A6FF">
+    <div class="agent">
+      <div class="meta">
+        <div class="num"><b>08</b>/ 08 · وكلاء صدى</div>
+        <h3>وكيل رصد لحظات البث<span class="en">Live Clip Detection Agent</span></h3>
+        <div class="q">«ما الذي يستحق انتباهنا الآن؟»</div>
+        <div class="pills"><span>خط أساس متحرك للتفاعل</span><span>تمييز القفزة الحقيقية عن الضجيج</span><span>ربط اللحظة بالفقرة</span></div>
+        <div class="value">القيمة: <b>مقطع جاهز للنشر في اللحظة المناسبة</b></div>
+      </div>
+      <div class="vis">
+        <span class="tag warn sim-badge">محاكاة: إشارة بث تجريبية — ليست رصدًا مباشرًا</span>
+        <div class="tv" style="margin-top:40px">
+          <span class="live">مباشر</span>
+          <svg class="studio" viewBox="0 0 800 250" preserveAspectRatio="none"><rect x="0" y="170" width="800" height="80" fill="rgba(4,10,43,.6)"/><rect x="230" y="120" width="340" height="60" rx="10" fill="rgba(63,208,232,.25)"/><circle cx="320" cy="70" r="34" fill="rgba(248,248,248,.25)"/><rect x="280" y="100" width="80" height="40" rx="18" fill="rgba(248,248,248,.2)"/><circle cx="480" cy="70" r="34" fill="rgba(248,248,248,.25)"/><rect x="440" y="100" width="80" height="40" rx="18" fill="rgba(248,248,248,.2)"/></svg>
+          <div class="lower3">فقرة الضيف: حوار حول الموسم الرياضي</div>
+        </div>
+        <div class="card timeline">
+          <svg viewBox="0 0 900 150" preserveAspectRatio="none" id="sigSvg"></svg>
+          <div class="segs"><span>افتتاح</span><span>تقرير</span><span class="hit" id="hitSeg">فقرة الضيف</span><span>فاصل</span><span>ختام</span></div>
+          <div class="scan" id="scan"></div>
+        </div>
+        <div class="card clipcard" data-step="1"><b>فرصة مقطع</b><p>فقرة الضيف · قفزة واضحة فوق الخط الأساسي<br><span style="color:var(--muted);font-size:17px">يُرتَّب حسب حجم الانحراف ودرجة الثقة</span></p></div>
+      </div>
+    </div>
+    <aside class="notes"><b>15 ث</b> — قولي بوضوح: «هذا الوكيل يعمل اليوم على إشارة بث تجريبية؛ يكتشف القفزة ويربطها بالفقرة، وينتظر ربطه بإشارة بث حقيقية».</aside>
+  </section>
+
+  <!-- 11 · PROTOTYPE -->
+  <section class="scene" data-id="proto" data-target="35" data-steps="4">
+    <div class="kicker">النموذج الأولي</div>
+    <h2 class="title" style="font-size:52px">رحلة مسؤول المحتوى داخل صدى</h2>
+    <div class="proto">
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span>Sada · لقطات من التطبيق الفعلي</span></div>
+        <div class="shots" id="shots">
+          <div class="shot"><img src="assets/screens/01-dashboard.png" alt=""><div class="ph">ضعي لقطة لوحة التحليلات هنا<small>assets/screens/01-dashboard.png</small></div></div>
+          <div class="shot"><img src="assets/screens/02-heatmap.png" alt=""><div class="ph">ضعي لقطة أفضل أوقات النشر هنا<small>assets/screens/02-heatmap.png</small></div></div>
+          <div class="shot"><img src="assets/screens/03-optimizer.png" alt=""><div class="ph">ضعي لقطة مُحسّن المحتوى هنا<small>assets/screens/03-optimizer.png</small></div></div>
+          <div class="shot"><img src="assets/screens/04-alerts.png" alt=""><div class="ph">ضعي لقطة التنبيهات والتشخيص هنا<small>assets/screens/04-alerts.png</small></div></div>
+          <div class="shot"><img src="assets/screens/05-audience.png" alt=""><div class="ph">ضعي لقطة تحليل الجمهور هنا<small>assets/screens/05-audience.png</small></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="journey" id="journey">
+          <div class="jstep"><span class="n">1</span><div>يفتح لوحة صدى<small>مؤشرات القنوات والمنصات</small></div></div>
+          <div class="jstep"><span class="n">2</span><div>يرى أفضل أوقات النشر<small>خريطة الأداء حسب اليوم والساعة</small></div></div>
+          <div class="jstep"><span class="n">3</span><div>يختبر مسودة قبل نشرها<small>صيغ وحساب وموعد</small></div></div>
+          <div class="jstep"><span class="n">4</span><div>يفتح تنبيهًا ويحصل على تشخيص<small>مع روابط الأدلة</small></div></div>
+          <div class="jstep"><span class="n">5</span><div>يفهم صوت الجمهور<small>المشاعر والنوايا · بلا بيانات شخصية</small></div></div>
+        </div>
+        <div class="proto-src">واجهة عربية بالكامل · React + FastAPI · نسخة احتياطية تعمل دون اتصال</div>
+      </div>
+    </div>
+    <aside class="notes"><b>35 ث</b> — كل ضغطة ← تنتقل لخطوة. اربطي كل خطوة بوكيل: اللوحة (الجمع والسلوك)، الأوقات والرائج (التنبؤ)، المسودة (التحسين)، التنبيه (التشخيص)، الجمهور.</aside>
+  </section>
+
+  <!-- 11a · TECH STACK (1/2): APIs, AI, databases -->
+  <section class="scene s-tech" data-id="tech1" data-target="25" data-steps="0">
+    <div class="kicker">البنية التقنية</div>
+    <h2 class="title">التقنيات المستخدمة في منصة صدى</h2>
+    <div class="tflow"><span>المصادر</span><i>←</i><span>جامع البيانات</span><i>←</i><span>قاعدة البيانات</span><i>←</i><span>التحليل</span><i>←</i><span>لوحة الفريق</span></div>
+    <div class="tgrid">
+      <div class="tcard card" style="--acc:var(--cyan);--i:0">
+        <div class="thead"><span class="ci"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span>واجهات برمجة التطبيقات</div>
+        <div class="titems">
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/youtube.svg" alt="YouTube"></span></span><div><b class="en">YouTube Data API</b><small>جمع فيديوهات قنوات الهيئة ومشاهداتها وتعليقاتها</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/instagram.svg" alt="Instagram"></span></span><div><b class="en">Instagram Graph API</b><small>قراءة منشورات حسابات الهيئة</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/x.svg" alt="X"></span></span><div><b class="en">X API</b><small>جمع التغريدات والردود</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg mono">A</span></span><div><b class="en">Apify Instagram Scraper</b><small>بيانات 500 منشور ونحو 1,400 تعليق</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/fastapi.svg" alt="FastAPI"></span></span><div><b><span class="en">Sada REST API</span></b><small>الواجهة التي تغذّي لوحة الفريق، مبنية بـ <span class="en">FastAPI</span></small></div></div>
+        </div>
+      </div>
+      <div class="tcard card" style="--acc:#B9A6FF;--i:1">
+        <div class="thead"><span class="ci"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg></span>النماذج اللغوية والذكاء الاصطناعي</div>
+        <div class="titems">
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/openai.svg" alt="OpenAI"></span></span><div><b class="en">OpenAI GPT mini</b><small>النموذج الأساسي</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/googlegemini.svg" alt="Gemini"></span></span><div><b class="en">Google Gemini Flash</b><small>النموذج الاحتياطي</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg c"><svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 0 1-3 3H3"/></svg></span></span><div><b>تبديل تلقائي</b><small>بين المفاتيح والنماذج عند نفاد الحصة</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg c"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg></span></span><div><b>سياق سعودي</b><small>يفهم اللهجة السعودية ويكتب الاقتراحات بصوت سعودي</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg c"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg></span></span><div><b>الاستخدامات</b><small>تصنيف المواضيع والتعليقات · تشخيص الأداء · اقتراح المنشورات</small></div></div>
+        </div>
+      </div>
+      <div class="tcard card" style="--acc:var(--green);--i:2">
+        <div class="thead"><span class="ci"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>قواعد البيانات</div>
+        <div class="titems">
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/postgresql.svg" alt="PostgreSQL"></span></span><div><b class="en">PostgreSQL</b><small>قاعدة الإنتاج</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/sqlite.svg" alt="SQLite"></span></span><div><b class="en">SQLite</b><small>قاعدة التطوير المحلي</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/sqlalchemy.svg" alt="SQLAlchemy"></span></span><div><b class="en">SQLAlchemy</b><small>طبقة موحّدة تعمل على القاعدتين</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg c"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg></span></span><div><b>بيانات حقيقية</b><small>موسم أوج وإحصاءات حج 1445</small></div></div>
+        </div>
+      </div>
+    </div>
+    <aside class="notes"><b>25 ث</b> — امشي مع مسار البيانات: «نجمع من واجهات المنصات الرسمية، نخزّن في قاعدة واحدة، ونستخدم نموذجين لغويين مع تبديل تلقائي عند نفاد الحصة — وكلاهما مضبوط على السياق السعودي».</aside>
+  </section>
+
+  <!-- 11a2 · TECH STACK (2/2): operations -->
+  <section class="scene s-tech" data-id="tech2" data-target="25" data-steps="0">
+    <div class="kicker">التقنيات المستخدمة في منصة صدى</div>
+    <h2 class="title">البنية التشغيلية</h2>
+    <div class="tflow"><span>المصادر</span><i>←</i><span>جامع البيانات</span><i>←</i><span>قاعدة البيانات</span><i>←</i><span>التحليل</span><i>←</i><span>لوحة الفريق</span></div>
+    <div class="tgrid g2">
+      <div class="tcard card tall" style="--acc:var(--amber);--i:0">
+        <div class="thead"><span class="ci"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>التحليل الإحصائي</div>
+        <div class="titems">
+          <div class="ti"><span class="lgs"><span class="lg c"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></span></span><div><b>نموذج نمو للمشاهدات</b><small>يتنبأ بمشاهدات اليوم السابع ويحسب درجة الانتشار</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/scipy.svg" alt="SciPy"></span><span class="lg"><img src="assets/logos/tech/numpy.svg" alt="NumPy"></span></span><div><b class="en">SciPy · NumPy</b><small>اختبارات إحصائية لمقارنة أنماط النشر</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg c"><svg viewBox="0 0 24 24"><path d="M2 12h4l3-8 4 16 3-8h6"/></svg></span></span><div><b>كشف القفزات والانخفاضات</b><small>في أداء المنشورات مقارنة بالمعتاد</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg c"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12"/></svg></span></span><div><b>رصد لحظات البث المباشر</b><small>اللحظات الصالحة للاقتطاع كمقاطع</small></div></div>
+        </div>
+        <div class="tnote"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>الأرقام لا تمر على نموذج لغوي، فكل نتيجة قابلة للتحقق</div>
+      </div>
+      <div class="tcard card" style="--acc:var(--green);--i:1">
+        <div class="thead"><span class="ci"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>الخادم</div>
+        <div class="titems">
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/python.svg" alt="Python"></span><span class="lg"><img src="assets/logos/tech/fastapi.svg" alt="FastAPI"></span><span class="lg mono">U</span></span><div><b class="en">Python · FastAPI · Uvicorn</b><small>لغة الخادم وإطار الواجهة البرمجية</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/pydantic.svg" alt="Pydantic"></span></span><div><b class="en">Pydantic</b><small>التحقق من البيانات</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg c"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M12 7.5v4M12 11.5l-5.5 4.5M12 11.5l5.5 4.5"/></svg></span></span><div><b>9 وكلاء ذكيين</b><small>وجامع بيانات يعمل كل 30 دقيقة</small></div></div>
+        </div>
+      </div>
+      <div class="tcard card" style="--acc:var(--cyan);--i:2">
+        <div class="thead"><span class="ci"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span>الواجهة الأمامية</div>
+        <div class="titems">
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/react.svg" alt="React"></span><span class="lg"><img src="assets/logos/tech/typescript.svg" alt="TypeScript"></span></span><div><b class="en">React · TypeScript</b><small>بناء واجهة لوحة الفريق</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/vite.svg" alt="Vite"></span><span class="lg"><img src="assets/logos/tech/tailwindcss.svg" alt="Tailwind CSS"></span></span><div><b class="en">Vite · Tailwind CSS</b><small>البناء والتنسيق</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg mono">R</span></span><div><b class="en">Recharts</b><small>الرسوم البيانية</small></div></div>
+        </div>
+      </div>
+      <div class="tcard card" style="--acc:#B9A6FF;--i:3">
+        <div class="thead"><span class="ci"><svg viewBox="0 0 24 24"><path d="M7 18a5 5 0 0 1-.6-10A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9"/><path d="M12 12v8M9 15l3-3 3 3"/></svg></span>النشر والتشغيل</div>
+        <div class="titems">
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/render.svg" alt="Render"></span></span><div><b class="en">Render</b><small>استضافة الخادم وقاعدة البيانات</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/vercel.svg" alt="Vercel"></span></span><div><b class="en">Vercel</b><small>استضافة الواجهة</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg"><img src="assets/logos/tech/githubactions.svg" alt="GitHub Actions"></span><span class="lg"><img src="assets/logos/tech/pytest.svg" alt="pytest"></span></span><div><b class="en">GitHub Actions · pytest</b><small>اختبارات تلقائية مع كل تحديث</small></div></div>
+        </div>
+      </div>
+      <div class="tcard card" style="--acc:var(--red);--i:4">
+        <div class="thead"><span class="ci"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/></svg></span>الأمان</div>
+        <div class="titems">
+          <div class="ti"><span class="lgs"><span class="lg c"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg></span></span><div><b>رموز دخول موقّعة</b><small>تسجيل دخول بتوقيع <span class="en">HMAC</span></small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg c"><svg viewBox="0 0 24 24"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 18l4-5"/></svg></span></span><div><b>تحديد عدد الطلبات</b><small>سقف لكل مستخدم</small></div></div>
+          <div class="ti"><span class="lgs"><span class="lg c"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span></span><div><b>مواقع مسموحة وترويسات أمان</b><small>قائمة <span class="en">CORS</span> محددة مسبقًا</small></div></div>
+        </div>
+      </div>
+    </div>
+    <aside class="notes"><b>25 ث</b> — ابدئي بالتحليل الإحصائي واقرئي الملاحظة: «الأرقام لا تمر على نموذج لغوي، فكل نتيجة قابلة للتحقق». ثم بسرعة: خادم بايثون، واجهة React، نشر على Render وVercel مع اختبارات تلقائية، وطبقة أمان.</aside>
+  </section>
+
+  <!-- 11b · BUSINESS MODEL (1/3): one subscription instead of five -->
+  <section class="scene s-biz" data-id="biz1" data-target="25" data-steps="1">
+    <div class="kicker">نموذج العمل</div>
+    <h2 class="title">نموذج العمل: <b>اشتراك واحد بدل خمسة</b></h2>
+    <p class="lead">فرق التواصل تدفع اليوم على <b>4 أدوات منفصلة</b> لا تتكلم مع بعض. صدى تجمعها في <b>منصة واحدة عربية</b>، بسعر <b>أقل من نصف مجموعها</b>.</p>
+    <div class="vs-grid">
+      <div class="vs-col vs-today">
+        <h3>اليوم</h3>
+        <div class="tools">
+          <div class="tool card"><b>تحليلات الأداء</b><span class="en">Sprout / Hootsuite</span><div class="pr"><span class="num">~4,000–5,600</span> ريال</div></div>
+          <div class="tool card"><b>رصد الجمهور بالعربي</b><span class="en">Brandwatch / Talkwalker / Lucidya</span><div class="pr"><span class="num">~3,750–9,400</span> ريال</div></div>
+          <div class="tool card"><b>مقارنة الأداء</b><span class="en">Socialinsider</span><div class="pr"><span class="num">~550–950</span> ريال</div></div>
+          <div class="tool card"><b>كتابة المحتوى بالذكاء الاصطناعي</b><span class="en">ChatGPT Team</span><div class="pr"><span class="num">~560</span> ريال</div></div>
+        </div>
+        <div class="vs-total"><span>المجموع</span><span><span class="num">~9,000–16,500</span> ريال / شهر</span></div>
+      </div>
+      <div class="arrow" data-step="1"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></div>
+      <div class="vs-col vs-sada" data-step="1">
+        <h3>مع صدى</h3>
+        <div class="big card">
+          <span class="tag ok">توفير <span class="num">65–80%</span></span>
+          <div class="p"><span class="num">2,900</span>ريال / شهر</div>
+          <ul><li>10 حسابات</li><li>مستخدمون بلا حد</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="vs-note">الأسعار تقريبية من الباقات المعلنة، لفريق من 5 مستخدمين.</div>
+    <aside class="notes"><b>25 ث</b> — «فرق التواصل تدفع اليوم على أربع أدوات لا تتكلم مع بعض: تحليلات، رصد، مقارنة، كتابة… المجموع 9 إلى 16 ألف ريال شهريًا» ← «صدى: 2,900 ريال، 10 حسابات، ومستخدمون بلا حد. توفير 65 إلى 80%».</aside>
+  </section>
+
+  <!-- 11c · BUSINESS MODEL (2/3): B2B tiers + B2G track -->
+  <section class="scene s-biz" data-id="biz2" data-target="25" data-steps="1">
+    <div class="kicker">نموذج العمل</div>
+    <h2 class="title">باقات للقطاع الخاص… <b>ومسار للحكومة</b></h2>
+    <h3 class="sec" style="--acc:var(--green)"><span class="en">B2B</span>باقات القطاع الخاص<small>السعر حسب عدد الحسابات وليس عدد المستخدمين.</small></h3>
+    <div class="tiers">
+      <div class="tier card"><h4>مجاني</h4><div class="p"><b>0</b>ريال</div><small>حساب واحد + تقرير تشخيص شهري</small></div>
+      <div class="tier card"><h4>أساسي</h4><div class="p"><b>750</b>ريال / شهر</div><small>3 حسابات</small></div>
+      <div class="tier card pop"><span class="tag ok">الأكثر طلبًا</span><h4>نمو</h4><div class="p"><b>2,900</b>ريال / شهر</div><small>10 حسابات + التنبيهات وتحليل الجمهور</small></div>
+      <div class="tier card"><h4>وكالات</h4><div class="p"><b>5,900</b>ريال / شهر</div><small>30 حسابًا + <span class="en">White-label</span></small></div>
+    </div>
+    <div data-step="1">
+      <h3 class="sec" style="--acc:var(--cyan);margin-top:44px"><span class="en">B2G</span>مسار القطاع الحكومي</h3>
+      <div class="g-cards">
+        <div class="g-card card">
+          <h4>ترخيص جهة</h4>
+          <div class="p"><span class="num">90–240</span>ألف ريال / سنة</div>
+          <p>أقل من نصف تكلفة الحلول المتعددة.</p>
+        </div>
+        <div class="g-card card">
+          <h4>منصة وطنية موحّدة</h4>
+          <div class="p">تكلفة الجهة <span class="num">~40–60</span>ألف / سنة</div>
+          <p>عقد واحد عبر وزارة الإعلام أو مركز التواصل الحكومي، ومقارنة موحّدة بين كل الجهات الحكومية.</p>
+          <div class="biz-tags"><span class="tag info">استضافة داخل المملكة</span><span class="tag info en">NCA</span><span class="tag info en">PDPL</span></div>
+        </div>
+      </div>
+    </div>
+    <aside class="notes"><b>25 ث</b> — «السعر حسب عدد الحسابات لا المستخدمين: مجاني للتجربة، ثم أساسي، ونمو هي الأكثر طلبًا، ووكالات مع White-label» ← الحكومة: ترخيص جهة بأقل من نصف تكلفة الحلول المتعددة، أو منصة وطنية بعقد واحد ومقارنة موحّدة بين الجهات.</aside>
+  </section>
+
+  <!-- 11d · BUSINESS MODEL (3/3): unit economics + roadmap -->
+  <section class="scene s-biz" data-id="biz3" data-target="20" data-steps="1">
+    <div class="kicker">نموذج العمل</div>
+    <h2 class="title">كيف نربح <b>بسعر أقل؟</b></h2>
+    <div class="how">
+      <div class="card"><span class="ic"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+        <p>بيانات شبه مجانية عبر الواجهات الرسمية <small>(<b>180 يومًا</b> لـ 9 قنوات بـ <b>324 وحدة</b> فقط)</small></p></div>
+      <div class="card"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+        <p>تحليل إحصائي محلي، ونموذج اللغة <b>فقط للكتابة</b>، فالتكلفة منخفضة</p></div>
+      <div class="card"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="12" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7.5 12h9M7.2 10.9l9.5-4.8M7.2 13.1l9.5 4.8"/></svg></span>
+        <p>خط بيانات واحد يخدم كل العملاء، وهامش ربح إجمالي متوقع <b>أعلى من 80%</b></p></div>
+    </div>
+    <div class="panel card road" data-step="1">
+      <h3>الخط الزمني</h3>
+      <ol>
+        <li><b><span class="en">0–6</span> أشهر</b>تجربة مع الهيئة + الباقة المجانية</li>
+        <li><b><span class="en">6–12</span> شهرًا</b><span class="en">3–5</span> جهات حكومية + 50 عميلًا مدفوعًا + الجدولة والنشر</li>
+        <li><b><span class="en">12–24</span> شهرًا</b>المنصة الوطنية + تيك توك وسناب + الخليج</li>
+      </ol>
+    </div>
+    <aside class="notes"><b>20 ث</b> — «كيف نربح بسعر أقل؟ البيانات شبه مجانية عبر الواجهات الرسمية، والتحليل إحصائي محلي، ونموذج اللغة للكتابة فقط، وخط بيانات واحد لكل العملاء: هامش أعلى من 80%» ← الخط الزمني.</aside>
+  </section>
+
+  <!-- 12 · SCALE -->
+  <section class="scene" data-id="scale" data-target="15" data-steps="2">
+    <div class="scale-msg"><div class="kicker">قابلية التوسع</div><h2 style="margin-top:12px">بدأنا من تحدٍّ إعلامي… <b>وصممنا حلًا قابلًا للتوسع</b></h2></div>
+    <div class="rings">
+      <div class="ring r2" data-ring="2"><span>جهات متعددة</span><div class="ring-items">
+        <em style="left:-6%;top:28%">جهات حكومية ذات حضور رقمي</em><em style="left:106%;top:28%">فرق التسويق الرقمي</em><em style="left:2%;top:82%">وكالات المحتوى</em><em style="left:98%;top:82%">مؤسسات تدير حسابات عديدة</em></div></div>
+      <div class="ring r1" data-ring="1"><span>مؤسسات إعلامية أخرى</span><div class="ring-items">
+        <em style="left:6%;top:74%">قنوات تلفزيونية</em><em style="left:94%;top:74%">منصات إخبارية</em></div></div>
+      <div class="ring r0 on"><span>هيئة الإذاعة والتلفزيون</span></div>
+    </div>
+    <div class="scale-caveat" data-step="2">التصميم مستقل عن الجهة: سجل الحسابات ومحوّلات المنصات قابلة للإضافة. التوسع الفعلي يعتمد على صلاحيات المنصات وقيود واجهاتها البرمجية — ولا يوجد لدينا عملاء حاليون غير حالة الاستخدام هذه.</div>
+    <aside class="notes"><b>15 ث</b> — ← المؤسسات الإعلامية · ← الجهات الأخرى + التحفظ.</aside>
+  </section>
+
+  <!-- 13 · CLOSE -->
+  <section class="scene s-close" data-id="close" data-target="15" data-steps="1">
+    <img class="logo glow" src="assets/logos/sada.png" alt="صدى">
+    <h2>صدى… يحوّل ضجيج البيانات إلى <b>وضوح القرار</b></h2>
+    <div class="team" data-step="1">
+      <div class="awj"><img src="assets/logos/awj.png" alt="أوج" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'ph',textContent:'شعار'}))"><span>فريق أوج | <span class="en">AWJ</span></span></div>
+    </div>
+    <div class="members" data-step="1">
+      <div class="member card"><b>هاجر الظفيري</b><span class="en">Data Engineer</span></div>
+      <div class="member card"><b>شهد بوصالح</b><span class="en">Agentic Engineer</span></div>
+      <div class="member card"><b>رفا الشريف</b><span class="en">RAG Engineer</span></div>
+      <div class="member card"><b>دالين مليباري</b><span class="en">UI/UX &amp; Front-End</span></div>
+    </div>
+    <div class="thanks" data-step="1">شكرًا لكم</div>
+    <aside class="notes"><b>15 ث</b> — «صدى… يحوّل ضجيج البيانات إلى وضوح القرار» (توقّفي) ← فريق أوج: هاجر (البيانات)، شهد (الوكلاء)، رفا (RAG)، دالين (الواجهة وتجربة المستخدم). «شكرًا لكم».</aside>
+  </section>
+
+</div>
+
+<div id="hud"></div>
+<div id="notes"></div>
+<div id="help"><div class="box">
+  <b>التحكم بالعرض</b><br>
+  <kbd>←</kbd><kbd>مسافة</kbd><kbd>PageDown</kbd> التالي (خطوة أو مشهد)<br>
+  <kbd>→</kbd><kbd>PageUp</kbd> السابق<br>
+  <kbd>R</kbd> إعادة حركة المشهد الحالي · <kbd>F</kbd> ملء الشاشة<br>
+  <kbd>T</kbd> المؤقت · <kbd>N</kbd> ملاحظات المتحدثة · <kbd>M</kbd> تقليل الحركة<br>
+  <kbd>Home</kbd> البداية · <kbd>End</kbd> الخاتمة · <kbd>?</kbd> هذه النافذة
+</div></div>
+<div id="nav"><button data-nav="prev">السابق →</button><button data-nav="next">← التالي</button><button data-nav="fs">⛶</button></div>
+
+<script src="data/best_times.js"></script>
+<script src="app.js"></script>
+
+</body></html>
